@@ -1,0 +1,2 @@
+# frontend
+Fronted Angular application.
