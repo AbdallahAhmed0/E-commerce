@@ -1,9 +1,13 @@
 import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+import { ProductsModule } from './products/products.module';
 
 const routes: Routes = [
-{path:'',component:SidebarComponent}
+  {
+    path:'products',
+    loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
+},
+
 ];
 
 @NgModule({
