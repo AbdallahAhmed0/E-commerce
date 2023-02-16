@@ -1,0 +1,25 @@
+
+<mat-card class="product-card">
+  <img mat-card-image [src]="product.fields.img">
+  <mat-card-content>
+      <div class="content">
+        <p><span>{{ product.name }}</span></p>
+        <p><span>Product Code: </span>{{ product.code }}</p>
+
+   <ng-container *ngFor="let field of product.fields | keyvalue">
+    <p><span>{{ field.key }}</span>: {{ field.value }}</p>
+
+    </ng-container>
+
+      <mat-card-actions>
+        <input type="number" min="0" >
+        <button mat-raised-button >Add to Cart</button>
+      </mat-card-actions>
+  </div>
+  <a  [routerLink]="['/product']">Back to Products</a>
+  <a class="edit" title="Edit" [routerLink]="['/product/edit/',product.code]">
+    <mat-icon class="edit-icon">edit</mat-icon>
+</a>
+
+</mat-card-content>
+</mat-card>

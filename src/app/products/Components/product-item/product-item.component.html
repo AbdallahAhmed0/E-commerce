@@ -1,0 +1,19 @@
+<mat-card class="product-card">
+
+
+  <mat-card-header>
+    <mat-card-title>{{prd.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-l-image src="../../../../assets/img/angular-red.png" [routerLink]="['/product/',prd.code]">
+
+
+
+  <mat-card-actions>
+    <a [routerLink]="['/product/',prd.code]">See more</a>
+
+    <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
+      <mat-icon class="edit-icon">edit</mat-icon>
+  </a>
+
+  </mat-card-actions>
+</mat-card>

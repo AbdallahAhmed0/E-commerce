@@ -1,0 +1,34 @@
+
+.product-card {
+  margin: 20px;
+}
+img{
+  cursor: pointer;
+  background: rgb(243, 235, 235);
+  margin: 10px;
+  border-radius: 5px;
+}
+
+
+.edit-icon{
+
+    color: #fff;
+    padding: 6px;
+    margin: 8px 0px;
+    border-radius: 6px;
+    font-size: 26px;
+    background: #0cd463;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+mat-icon:hover{
+  background: darken(#0cd463, 15%);
+}
+.edit{
+  margin-left: 60%;
+}
+img:hover{
+  background: darken(rgb(243, 235, 235), 20%);
+}
+

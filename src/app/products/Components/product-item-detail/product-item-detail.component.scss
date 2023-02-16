@@ -1,0 +1,66 @@
+@import'../../../../assets/assets/sass/lbd/variables';
+.product-card {
+  display: flex;
+  width: 80%;
+  margin:2% 10%;
+  border-radius: 10px;
+}
+  img {
+    margin-right: 10%;
+    object-fit: cover;
+    border-radius: 2px;
+    background: rgb(238, 236, 236);
+    cursor: pointer;
+    max-height: 350px;
+    width: 50%;
+
+  }
+  .mat-card-image:first-child{
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  mat-card-content {
+    width: 100%;
+  }
+P{
+  font-size: 16px;
+  word-wrap: break-word;
+  width:75%;
+
+}
+span{
+  font-size: 18;
+  font-weight: 500;
+}
+button{
+  background: $color-blue;
+  color: $white-color;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.edit-icon{
+
+  color: #fff;
+  padding: 6px;
+  margin: 8px 0px;
+  border-radius: 6px;
+  font-size: 26px;
+  background: #0cd463;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+mat-icon:hover{
+background: darken(#0cd463, 15%);
+}
+.edit{
+margin-left: 60%;
+}
+img:hover{
+background: darken($color-blue, 15%);
+}
+button:hover{
+  background: darken(rgb(243, 235, 235), 20%);
+
+}

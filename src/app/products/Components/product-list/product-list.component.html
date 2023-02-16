@@ -1,0 +1,4 @@
+<button mat-button class="btn-add" [routerLink]="['/product/add']" ><mat-icon>add</mat-icon> Add Product</button>
+<div class="product-container">
+  <app-product-item class="product-index" *ngFor="let prd of products" [prd]="prd"></app-product-item>
+</div>

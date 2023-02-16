@@ -1,0 +1,53 @@
+<p>{{newProduct.value|json}}</p>
+<div class="contianer" >
+  <p>Edit Product</p>
+  <button mat-button class="btn-list" style="color:#007bff;" (click)="goback()"><mat-icon>menu</mat-icon> All Products</button>
+
+  <div class="form">
+      <p class="edit">Edit Product</p>
+
+
+  <form #productFrm="ngForm" [formGroup]="newProduct" (ngSubmit)="addProduct()">
+    <mat-form-field appearance="fill" >
+        <mat-label>Name</mat-label>
+      <input matInput formControlName="name" minlength="3"  required>
+
+      <mat-error *ngIf="name?.hasError('required')">
+          Name is Required!
+      </mat-error>
+
+  </mat-form-field>
+  <mat-form-field appearance="fill" >
+
+    <mat-label>Code</mat-label>
+    <input matInput formControlName="code" required>
+
+    <mat-error *ngIf="code?.hasError('required')">
+        Code is Required!
+    </mat-error>
+
+</mat-form-field>
+
+<div formArrayName="fields">
+  <div *ngFor="let field of fieldsArray.controls; let i = index">
+    <div [formGroupName]="i">
+      <mat-form-field appearance="fill">
+        <mat-label>Key</mat-label>
+        <input matInput formControlName="key">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Value</mat-label>
+        <input matInput formControlName="value">
+      </mat-form-field>
+      <button class="btn-delete" mat-icon-button (click)="deleteField(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<button mat-button type="button" class="btn-add" (click)="addField()"><mat-icon>add</mat-icon>add Field</button>
+<button mat-raised-button [disabled]="productFrm.invalid" class="submit" type="submit">Save</button>
+
+</form>
+  </div>
+  </div>
