@@ -11,42 +11,50 @@ import { Subscription } from 'rxjs';
 })
 export class EditProductComponent implements OnInit,OnDestroy {
   product!:product;
+  getProduct!:product;
   editFields!:object;
+  defaultFeilds!:any[];
 
   consoleError:any;
-  newProduct!: FormGroup;
+  editProduct!: FormGroup;
   subscrProduct?:Subscription;
 
   constructor(
     // private ProductService:ProductService,
       private router:Router,
       private fb:FormBuilder){
+
+        this.getProduct={name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125,
+        des:"Healthy and friendly ecological board material, which is waterproof and mothproof, high hardness, and easy to clean Easy installation, bearings can be installed by aligning the clamps Accompany a good partner"}};
+
+        this.defaultFeilds = Object.entries(this.getProduct.fields);
+
       }
 
 
 ngOnInit(): void {
-this.newProduct = this.fb.group({
-    name: ['',[Validators.required, Validators.minLength(3)]],
-    code:['',[Validators.required]],
-    fields: this.fb.array([this.createField()])
+    this.editProduct = this.fb.group({
+    name: [this.getProduct.name,[Validators.required, Validators.minLength(3)]],
+    code:[this.getProduct.code,[Validators.required]],
+    fields: this.fb.array(this.defaultFeilds.map(field => this.createField(field)))
   });
 
-}
+        }
 
-createField():FormGroup {
-return this.fb.group({
-    key: ['', Validators.required],
-    value: ['']
-  });
+        createField(defaultField = []): FormGroup {
+          return this.fb.group({
+            key: [defaultField[0], Validators.required],
+            value: [defaultField[1]]
+          });
+        }
 
-}
 
 addField(): void {
-  (this.newProduct.get('fields') as FormArray).push(this.createField());
+  (this.editProduct.get('fields') as FormArray).push(this.createField());
 }
 
 deleteField(index: number): void {
-  (this.newProduct.get('fields') as FormArray).removeAt(index);
+  (this.editProduct.get('fields') as FormArray).removeAt(index);
 }
 
 convertArrToObj(arr:any):object{
@@ -60,9 +68,9 @@ convertArrToObj(arr:any):object{
 
 
 
-addProduct(){
-this.editFields =this.convertArrToObj(this.newProduct.value.fields);
-this.product=this.newProduct.value;
+EditProduct(){
+this.editFields =this.convertArrToObj(this.editProduct.value.fields);
+this.product=this.editProduct.value;
 this.product.fields=this.editFields;
 
 console.log(this.product);
@@ -83,13 +91,13 @@ this.router.navigateByUrl('/product');
 }
 
 get name() {
-return this.newProduct.get('name');
+return this.editProduct.get('name');
 }
 get code() {
-return this.newProduct.get('code');
+return this.editProduct.get('code');
 }
 get fieldsArray(): FormArray {
-return this.newProduct.get('fields') as FormArray;
+return this.editProduct.get('fields') as FormArray;
 }
 
 

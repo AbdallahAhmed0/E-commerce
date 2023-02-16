@@ -17,6 +17,14 @@ export class ProductListComponent implements OnInit {
     //   this.products=prds;
     // })
     this.products=[{name:"Medicine",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
+    {name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
+    {name:"Medicine",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
+    {name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
+    {name:"Medicine",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
+    {name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
+    {name:"Medicine",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
+    {name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
+    {name:"Medicine",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
     {name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}}]
   }
 

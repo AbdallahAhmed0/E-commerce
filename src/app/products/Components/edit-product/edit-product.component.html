@@ -1,4 +1,4 @@
-<p>{{newProduct.value|json}}</p>
+<p>{{editProduct.value|json}}</p>
 <div class="contianer" >
   <p>Edit Product</p>
   <button mat-button class="btn-list" style="color:#007bff;" (click)="goback()"><mat-icon>menu</mat-icon> All Products</button>
@@ -7,7 +7,7 @@
       <p class="edit">Edit Product</p>
 
 
-  <form #productFrm="ngForm" [formGroup]="newProduct" (ngSubmit)="addProduct()">
+  <form #productFrm="ngForm" [formGroup]="editProduct" (ngSubmit)="EditProduct()">
     <mat-form-field appearance="fill" >
         <mat-label>Name</mat-label>
       <input matInput formControlName="name" minlength="3"  required>

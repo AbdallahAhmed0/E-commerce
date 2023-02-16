@@ -32,7 +32,7 @@ span{
   font-size: 18;
   font-weight: 500;
 }
-button{
+.cart{
   background: $color-blue;
   color: $white-color;
   border-radius: 5px;
@@ -58,9 +58,15 @@ background: darken(#0cd463, 15%);
 margin-left: 60%;
 }
 img:hover{
-background: darken($color-blue, 15%);
+background: darken(rgb(238, 236, 236), 18%);
 }
-button:hover{
-  background: darken(rgb(243, 235, 235), 20%);
+.cart:hover{
+  background: darken($color-blue, 20%);
+
+}
+.btn-edit{
+  color:#007bff;
+  font-size: 17px;
+  margin-top: 40px;
 
 }

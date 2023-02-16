@@ -1,9 +1,9 @@
 export interface product
 {
 
-  id:number,
+  id?:number,
   name:string,
   code:string,
-  fields?:object
+  fields:object
 
 }

@@ -1,4 +1,7 @@
 
+<button mat-button class="btn-edit" [routerLink]="['/product/edit/',product.code]" ><mat-icon>edit</mat-icon> Edit Product</button>
+
+
 <mat-card class="product-card">
   <img mat-card-image [src]="product.fields.img">
   <mat-card-content>
@@ -13,13 +16,11 @@
 
       <mat-card-actions>
         <input type="number" min="0" >
-        <button mat-raised-button >Add to Cart</button>
+        <button class="cart" mat-raised-button >Add to Cart</button>
       </mat-card-actions>
   </div>
   <a  [routerLink]="['/product']">Back to Products</a>
-  <a class="edit" title="Edit" [routerLink]="['/product/edit/',product.code]">
-    <mat-icon class="edit-icon">edit</mat-icon>
-</a>
+
 
 </mat-card-content>
 </mat-card>
