@@ -1,4 +1,3 @@
-<p>{{editProduct.value|json}}</p>
 <div class="contianer" >
   <p>Edit Product</p>
   <button mat-button class="btn-list" style="color:#007bff;" (click)="goback()"><mat-icon>menu</mat-icon> All Products</button>
@@ -7,10 +6,10 @@
       <p class="edit">Edit Product</p>
 
 
-  <form #productFrm="ngForm" [formGroup]="editProduct" (ngSubmit)="EditProduct()">
+  <form #productFrm="ngForm" [formGroup]="editProduct" *ngIf="editProduct" (ngSubmit)="EditProduct()">
     <mat-form-field appearance="fill" >
         <mat-label>Name</mat-label>
-      <input matInput formControlName="name" minlength="3"  required>
+      <input matInput formControlName="name" minlength="3" value="{{getProduct.name}}" required>
 
       <mat-error *ngIf="name?.hasError('required')">
           Name is Required!
@@ -20,7 +19,7 @@
   <mat-form-field appearance="fill" >
 
     <mat-label>Code</mat-label>
-    <input matInput formControlName="code" required>
+    <input matInput formControlName="code" value="{{getProduct.code}}" required>
 
     <mat-error *ngIf="code?.hasError('required')">
         Code is Required!

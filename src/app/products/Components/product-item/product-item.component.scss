@@ -22,11 +22,32 @@ img{
     height: 40px;
     text-align: center;
 }
-mat-icon:hover{
+.edit-icon:hover{
   background: darken(#0cd463, 15%);
 }
 .edit{
-  margin-left: 60%;
+  margin-left: 45%;
+  display: inline;
+
+}
+.delete-icon{
+
+  color: #fff;
+  padding: 6px;
+  margin: 8px 0px;
+  border-radius: 6px;
+  font-size: 26px;
+  background: #f20202;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.delete{
+  margin-left: 5%;
+  display: inline;
+}
+.delete-icon:hover{
+  background: darken(#f20202, 15%);
 }
 img:hover{
   background: darken(rgb(243, 235, 235), 20%);

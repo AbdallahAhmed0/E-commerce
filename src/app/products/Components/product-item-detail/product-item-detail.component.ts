@@ -23,11 +23,11 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
     this.subscripRoute= this.activateRoute.paramMap.subscribe( paramMap  => {
     this.codeProduct = String(paramMap.get('code'));
   })
-// this.ProductService.getProductByCode(this.codeProduct).subscribe(prd =>{
-//   this.product=prd;
-// })
-this.product={name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125,
-des:"Healthy and friendly ecological board material, which is waterproof and mothproof, high hardness, and easy to clean Easy installation, bearings can be installed by aligning the clamps Accompany a good partner, safe and , you can use it with confidence You can put it in its cage or outside. Pet pets always require a toy for them to play and they will have fun with it. Serve for hamster, guinea pig chinchilla, etc."}}
+this.ProductService.getProductByCode(this.codeProduct).subscribe(prd =>{
+  this.product=prd;
+})
+// this.product={name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125,
+// des:"Healthy and friendly ecological board material, which is waterproof and mothproof, high hardness, and easy to clean Easy installation, bearings can be installed by aligning the clamps Accompany a good partner, safe and , you can use it with confidence You can put it in its cage or outside. Pet pets always require a toy for them to play and they will have fun with it. Serve for hamster, guinea pig chinchilla, etc."}}
   }
 
 ngOnDestroy(): void {

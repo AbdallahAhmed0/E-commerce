@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from '../../Services/product.service';
 
 @Component({
   selector: 'app-product-item',
@@ -8,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductItemComponent implements OnInit {
   @Input() prd!: any;
 
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
   }
-
+  deleteProduct(code:string){
+    this.productService.deleteProduct(code);
+  }
 }

@@ -21,7 +21,7 @@ export class AddProductComponent implements OnInit,OnDestroy {
   subscrProduct?:Subscription;
 
     constructor(
-            // private ProductService:ProductService,
+            private productService:ProductService,
               private router:Router,
               private fb:FormBuilder){
               }
@@ -71,14 +71,14 @@ export class AddProductComponent implements OnInit,OnDestroy {
     console.log(this.product);
     const observer={
       next: (product:any) => {
-        this.router.navigateByUrl('/Products');
+        this.router.navigateByUrl('/product');
         // this.ProductService.openSnackBar('Added');
       },
       error: (err:Error)=>{
         this.consoleError = err.message
         }
     }
-  //  this.subscrProduct= this.ProductService.addproduct(this.product).subscribe(observer);
+  this.subscrProduct= this.productService.addproduct(this.product).subscribe(observer);
   }
 
 goback(){

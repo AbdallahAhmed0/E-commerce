@@ -64,9 +64,9 @@ export class ProductService {
     );
 
   }
-  addproduct(product:product):Observable<product>{
+  addproduct(product:product):Observable<any>{
 
-  return this.httpClient.post<product>(`${environment.APPURL}/product`,JSON.stringify(product))
+  return this.httpClient.post<any>(`${environment.APPURL}/product`,JSON.stringify(product),this.httpOption)
   .pipe(
     retry(2),
     catchError(this.handleError)
@@ -91,7 +91,6 @@ export class ProductService {
         catchError(this.handleError)
       )
       .subscribe(data =>{
-
       });
     }
 

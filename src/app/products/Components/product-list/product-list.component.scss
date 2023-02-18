@@ -1,7 +1,8 @@
 .product-index {
 display: inline-flex;
 flex-wrap: wrap;
-justify-content: space-between;
+justify-items: auto;
+justify-content: space-evenly;
 }
 .btn-add{
   color:#007bff;
