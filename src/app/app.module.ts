@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MaterialModule
+        MaterialModule,
+        ProductsModule
     ]
 })
 export class AppModule { }

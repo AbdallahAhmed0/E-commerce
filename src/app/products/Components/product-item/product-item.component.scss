@@ -1,12 +1,13 @@
 
-.product-card {
-  margin: 20px;
+.card {
+  width: 35%;
+  margin-bottom: 20px;
 }
 img{
   cursor: pointer;
-  background: rgb(243, 235, 235);
+  background: #f1f1f1;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 
@@ -49,7 +50,12 @@ img{
 .delete-icon:hover{
   background: darken(#f20202, 15%);
 }
-img:hover{
-  background: darken(rgb(243, 235, 235), 20%);
-}
+p{
+  font-size: 16px;
+  word-wrap: break-word;
+  width:75%;
 
+}
+@media screen {
+
+}

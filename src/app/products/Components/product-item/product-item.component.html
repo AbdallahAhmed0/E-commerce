@@ -1,12 +1,9 @@
-<mat-card class="product-card">
 
+<mat-card class="card" >
 
-  <mat-card-header>
-    <mat-card-title>{{prd.name}}</mat-card-title>
-  </mat-card-header>
   <img mat-card-l-image src="../../../../assets/img/angular-red.png" [routerLink]="['/product/',prd.code]">
 
-
+  <p><a [routerLink]="['/product/',prd.code]">{{prd.name}}</a></p>
 
   <mat-card-actions>
     <a [routerLink]="['/product/',prd.code]">See more</a>
@@ -17,6 +14,7 @@
   <a class="delete" title="Delete" (click)="deleteProduct(prd.code)">
     <mat-icon class="delete-icon">delete</mat-icon>
 </a>
+
 
   </mat-card-actions>
 </mat-card>

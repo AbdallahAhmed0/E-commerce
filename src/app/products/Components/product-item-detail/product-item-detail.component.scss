@@ -1,4 +1,5 @@
 @import'../../../../assets/assets/sass/lbd/variables';
+
 .product-card {
   display: flex;
   width: 80%;
@@ -39,24 +40,6 @@ span{
   margin: 20px;
 }
 
-.edit-icon{
-
-  color: #fff;
-  padding: 6px;
-  margin: 8px 0px;
-  border-radius: 6px;
-  font-size: 26px;
-  background: #0cd463;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
-mat-icon:hover{
-background: darken(#0cd463, 15%);
-}
-.edit{
-margin-left: 60%;
-}
 img:hover{
 background: darken(rgb(238, 236, 236), 18%);
 }
@@ -65,8 +48,20 @@ background: darken(rgb(238, 236, 236), 18%);
 
 }
 .btn-edit{
-  color:#007bff;
+  color:$white-color;
+  background:#0cd463;
   font-size: 17px;
   margin-top: 40px;
+  border-radius:8px;
+  margin-left:10%;
+
+}
+.btn-delete{
+  color:$white-color;
+  background:$danger-states-color;
+  font-size: 17px;
+  margin-top: 40px;
+  border-radius:8px;
+  margin-left:15px;
 
 }
