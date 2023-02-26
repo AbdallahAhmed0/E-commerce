@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductService } from './../../Services/product.service';
 import { product } from './../../Model/product';
+import { DialogeComponent } from '../../../material/dialoge/dialoge.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -13,10 +15,11 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
 
   codeProduct!:string;
   subscripRoute!:Subscription;
-  product!:any;
+  product!:product;
   constructor(private activateRoute: ActivatedRoute,
               private router:Router,
-              private productService:ProductService) { }
+              private productService:ProductService,
+              private dialog: MatDialog) { }
   ngOnInit(): void {
 
     this.subscripRoute= this.activateRoute.paramMap.subscribe( paramMap  => {
@@ -29,9 +32,21 @@ this.product={name:"Book",code:"bk",fields:{price:120,img:"../../../../assets/im
 des:"Healthy and friendly ecological board material, which is waterproof and mothproof, high hardness, and easy to clean Easy installation, bearings can be installed by aligning the clamps Accompany a good partner, safe and , you can use it with confidence You can put it in its cage or outside. Pet pets always require a toy for them to play and they will have fun with it. Serve for hamster, guinea pig chinchilla, etc."}}
   }
 
+
 deleteProduct(code:string){
-  this.productService.deleteProduct(code);
-  this.router.navigateByUrl('/product');
+  const dialogRef = this.dialog.open(DialogeComponent, {
+    width: '400px',
+    height:'220px',
+    data: { message: this.product.name },
+  });
+
+  dialogRef.afterClosed().subscribe((result) => {
+    if (result === 'confirm') {
+
+      this.productService.deleteProduct(code);
+      this.router.navigateByUrl('/product');
+        }
+  });
 }
 
 
