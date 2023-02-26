@@ -1,0 +1,27 @@
+
+<button mat-button class="btn-edit" [routerLink]="['/product/edit/',product.code]" ><mat-icon>edit</mat-icon> Edit Product</button>
+<button mat-button class="btn-delete" (click)="deleteProduct(product.code)" ><mat-icon>delete</mat-icon> Delete Product</button>
+
+
+<mat-card class="product-card">
+  <img mat-card-image [src]="product.fields.img">
+  <mat-card-content>
+      <div class="content">
+        <p><span>{{ product.name }}</span></p>
+        <p><span>Product Code: </span>{{ product.code }}</p>
+
+   <ng-container *ngFor="let field of product.fields | keyvalue">
+    <p><span>{{ field.key }}</span>: {{ field.value }}</p>
+
+    </ng-container>
+
+      <mat-card-actions>
+        <input type="number" min="0" >
+        <button class="cart" mat-raised-button >Add to Cart</button>
+      </mat-card-actions>
+  </div>
+  <a  [routerLink]="['/product']">Back to Products</a>
+
+
+</mat-card-content>
+</mat-card>

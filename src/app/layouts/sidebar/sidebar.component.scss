@@ -7,9 +7,9 @@ mat-sidenav {
 
     padding: 16px;
     text-align: center;
-  //  background-image: url('../../../assets/img/sidebar-4.jpg');
-    opacity: 0.9;
-    background-color: $color-blue;
+  //  background-image: url('../../../assets/img/sidebar-1.jpg');
+    // opacity: 0.9;
+    background-color:$red-navbar;
     background-blend-mode: multiply;
 
 
@@ -38,7 +38,7 @@ mat-sidenav-container {
     }
 }
 .menu-button:hover{
-    background:$primary-bg;
+    background:darken($red-navbar, 10%);
     border-radius: 5px;
 }
 

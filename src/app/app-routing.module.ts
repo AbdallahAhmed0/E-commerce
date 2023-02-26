@@ -4,7 +4,7 @@ import { ProductsModule } from './products/products.module';
 
 const routes: Routes = [
   {
-    path:'products',
+    path:'product',
     loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)
 },
 

@@ -1,0 +1,27 @@
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.btn-add{
+  background:#007bff;
+  color: white;
+  border-radius: 8px;
+  font-size: 17px;
+  margin: 2%;
+
+}
+.btn-add:hover{
+  background: darken(#007bff,10%);
+}
+// @media screen  {
+// .btn-add{
+//   background:#007bff;
+//   color: white;
+//   border-radius: 4px;
+//   font-size: 14px;
+//   margin: 2%;
+// }
+// }

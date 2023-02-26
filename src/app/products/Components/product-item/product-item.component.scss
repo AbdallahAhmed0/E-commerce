@@ -1,0 +1,61 @@
+
+.card {
+  width: 35%;
+  margin-bottom: 20px;
+}
+img{
+  cursor: pointer;
+  background: #f1f1f1;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+
+.edit-icon{
+
+    color: #fff;
+    padding: 6px;
+    margin: 8px 0px;
+    border-radius: 6px;
+    font-size: 26px;
+    background: #0cd463;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.edit-icon:hover{
+  background: darken(#0cd463, 15%);
+}
+.edit{
+  margin-left: 45%;
+  display: inline;
+
+}
+.delete-icon{
+
+  color: #fff;
+  padding: 6px;
+  margin: 8px 0px;
+  border-radius: 6px;
+  font-size: 26px;
+  background: #f20202;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.delete{
+  margin-left: 5%;
+  display: inline;
+}
+.delete-icon:hover{
+  background: darken(#f20202, 15%);
+}
+p{
+  font-size: 16px;
+  word-wrap: break-word;
+  width:75%;
+
+}
+@media screen {
+
+}

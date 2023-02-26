@@ -1,0 +1,67 @@
+@import'../../../../assets/assets/sass/lbd/variables';
+
+.product-card {
+  display: flex;
+  width: 80%;
+  margin:2% 10%;
+  border-radius: 10px;
+}
+  img {
+    margin-right: 10%;
+    object-fit: cover;
+    border-radius: 2px;
+    background: rgb(238, 236, 236);
+    cursor: pointer;
+    max-height: 350px;
+    width: 50%;
+
+  }
+  .mat-card-image:first-child{
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  mat-card-content {
+    width: 100%;
+  }
+P{
+  font-size: 16px;
+  word-wrap: break-word;
+  width:75%;
+
+}
+span{
+  font-size: 18;
+  font-weight: 500;
+}
+.cart{
+  background: $color-blue;
+  color: $white-color;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+img:hover{
+background: darken(rgb(238, 236, 236), 18%);
+}
+.cart:hover{
+  background: darken($color-blue, 20%);
+
+}
+.btn-edit{
+  color:$white-color;
+  background:#0cd463;
+  font-size: 17px;
+  margin-top: 40px;
+  border-radius:8px;
+  margin-left:10%;
+
+}
+.btn-delete{
+  color:$white-color;
+  background:$danger-states-color;
+  font-size: 17px;
+  margin-top: 40px;
+  border-radius:8px;
+  margin-left:15px;
+
+}
