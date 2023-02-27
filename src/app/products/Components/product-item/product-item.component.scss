@@ -15,8 +15,44 @@ img{
 
 }
 .content{
-  margin: 5px  10px;
+  margin: 0px  5px;
   margin-bottom: 0px;
+}
+.name{
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+}
+.type{
+  background: rgb(255, 100, 10);
+  color: #fff;
+  font-size: 13px;
+  padding: 0px 3px ;
+  font-weight: 500;
+  border-radius: 4px;
+  float: right;
+}
+.price{
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.cart{
+  color: #6e6d6d;
+  float: right;
+  background: #e7e7e7;
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 50%;
+}
+.cart:hover{
+  background: rgb(255, 100, 10);
+  color: #fff;
+  cursor: pointer;
 }
 
 .edit-icon{
@@ -52,6 +88,9 @@ img{
 }
 .delete-icon:hover{
   background: darken(#f20202, 15%);
+}
+mat-card-actions{
+  width: 100%;
 }
 p{
   font-size: 16px;

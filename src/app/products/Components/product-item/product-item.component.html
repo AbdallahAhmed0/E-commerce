@@ -6,10 +6,16 @@
 
   <div class="content">
 
-      <p><a [routerLink]="['/product/',prd.code]">{{prd.name}}</a></p>
+      <p class="name" [routerLink]="['/product/',prd.code]">{{prd.name}}</p>
+      <span class="type" *ngIf="prd?.fields.type">{{prd?.fields.type}}</span>
+      <span class="type" *ngIf="!prd?.fields.type">others</span>
 
-      <mat-card-actions align="end">
-          <a [routerLink]="['/product/',prd.code]">See more</a>
+      <div class="rating"></div>
+      <div>
+        <span class="price" *ngIf="prd?.fields.price">{{prd?.fields.price |currency}}</span>
+        <span class="cart"><mat-icon>shopping_cart</mat-icon></span>
+      </div>
+      <mat-card-actions  align="end">
           <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
             <mat-icon class="edit-icon">edit</mat-icon>
           </a>
