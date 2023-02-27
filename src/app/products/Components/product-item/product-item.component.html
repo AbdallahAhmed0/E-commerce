@@ -1,20 +1,21 @@
 
 <mat-card class="card" >
 
-  <img mat-card-xl-image src="../../../../assets/img/sidebar-3.jpg" [routerLink]="['/product/',prd.code]">
+  <img  [src]="prd?.fields.images" alt="Product_image" [routerLink]="['/product/',prd.code]"
+  onerror="this.onerror = null;this.src='../../../../assets/img/full-screen-image-3.jpg'">
 
-  <p><a [routerLink]="['/product/',prd.code]">{{prd.name}}</a></p>
+  <div class="content">
 
-  <mat-card-actions>
-    <a [routerLink]="['/product/',prd.code]">See more</a>
+      <p><a [routerLink]="['/product/',prd.code]">{{prd.name}}</a></p>
 
-    <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
-      <mat-icon class="edit-icon">edit</mat-icon>
-  </a>
-  <a class="delete" title="Delete" (click)="deleteProduct(prd.code)">
-    <mat-icon class="delete-icon">delete</mat-icon>
-</a>
-
-
-  </mat-card-actions>
+      <mat-card-actions align="end">
+          <a [routerLink]="['/product/',prd.code]">See more</a>
+          <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
+            <mat-icon class="edit-icon">edit</mat-icon>
+          </a>
+          <a class="delete" title="Delete" (click)="deleteProduct(prd.code)">
+            <mat-icon class="delete-icon">delete</mat-icon>
+          </a>
+    </mat-card-actions>
+  </div>
 </mat-card>

@@ -28,7 +28,7 @@ nameProject!:string;
         this.sidenav.close();
       } else {
         this.sidenav.mode = 'side';
-        this.sidenav.open();
+        this.sidenav.close();
       }
     });
     this.cd.detectChanges();

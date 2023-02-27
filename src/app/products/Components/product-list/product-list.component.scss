@@ -1,12 +1,14 @@
 
 .product-container{
 
+  background: #FFF;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 6%;
 }
 .item{
-width: 23%;
+width: 24%;
 }
 .btn-add{
   background:#007bff;

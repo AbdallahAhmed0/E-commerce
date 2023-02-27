@@ -2,8 +2,9 @@
 
     <app-header [sidenav]="sidenav"></app-header>
 
+    <div class="body">
     <router-outlet></router-outlet>
-
+    </div>
     <mat-sidenav #sidenav="matSidenav" [style.width.px]="!sidenav.close ? 80 : 250"
       class="mat-elevation-z8">
 

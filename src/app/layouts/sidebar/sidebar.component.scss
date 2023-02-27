@@ -12,9 +12,11 @@ mat-sidenav {
     background-color:$red-navbar;
     background-blend-mode: multiply;
 
-
 }
 
+.body{
+  background: #FFF;
+}
 
 mat-sidenav-container {
     height: 100%;

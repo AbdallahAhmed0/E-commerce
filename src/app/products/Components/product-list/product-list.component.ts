@@ -16,15 +16,15 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllproducts().subscribe(prds => {
       this.products=prds;
     })
-    this.products=[{name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
+    this.products=[{name:"Modern Rubber Chair",code:"mb",fields:{price:95,img:"../../../../assets/img/sidebar-4.jpg",place:'Giza'}},
+    {name:"Rustic Rubber Gloves",code:"bk",fields:{price:120,img:"../../../../assets/img/sidebar-3.jpg",place:'Cairo',pages:125}},
+    {name:"Practical Concrete Computer",code:"md",fields:{price:95,images:"../../../../assets/img/sidebar-5.jpg",place:'Giza'}},
+    {name:"Modern Rubber Chair",code:"mb",fields:{price:95,images:"../../../../assets/img/sidebar-2.jpg",place:'Giza'}},
+    {name:"Modern Rubber Chair",code:"bk",fields:{price:120,img:"../../../../assets/img/sidebar-1.jpg",place:'Cairo',pages:125}},
+    {name:"Modern Rubber Chair",code:"md",fields:{price:95,images:"../../../../assets/img/mask.png",place:'Giza'}},
+    {name:"Practical Concrete Computer",code:"mb",fields:{price:95,images:"../../../../assets/img/new_logo.png",place:'Giza'}},
+    {name:"Modern Rubber Chair",code:"bk",fields:{price:120,images:"../../../../assets/img/default-avatar.png",place:'Cairo',pages:125}},
+    {name:"Modern Rubber Chair",code:"md",fields:{price:95,images:"../../../../assets/img/angular-red.png",place:'Giza'}},
 ]
   }
 
