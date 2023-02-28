@@ -10,6 +10,7 @@ import { product } from '../Model/product';
 export class ProductService {
 
   httpOption:any;
+  private _snackBar: any;
 
 
 
@@ -91,8 +92,13 @@ export class ProductService {
         catchError(this.handleError)
       )
       .subscribe(data =>{
-        
+
       });
     }
+    openSnackBar(message: string ) {
+      this._snackBar.open(message+" sucessfully","close" ,{
+        duration:3000 ,
 
+      });
+    }
 }
