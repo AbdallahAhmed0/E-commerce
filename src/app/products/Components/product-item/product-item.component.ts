@@ -19,9 +19,8 @@ export class ProductItemComponent implements OnInit {
   deleteProduct(code:string){
     const dialogRef = this.dialog.open(DialogeComponent, {
       width: '400px',
-      height:'220px',
-      data: { message: this.prd.name },
-    });
+      height:'290px'
+      });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result === 'confirm') {

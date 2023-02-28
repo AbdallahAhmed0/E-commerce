@@ -36,9 +36,8 @@ des:"Healthy and friendly ecological board material, which is waterproof and mot
 deleteProduct(code:string){
   const dialogRef = this.dialog.open(DialogeComponent, {
     width: '400px',
-    height:'220px',
-    data: { message: this.product.name },
-  });
+    height:'290px'
+    });
 
   dialogRef.afterClosed().subscribe((result) => {
     if (result === 'confirm') {
