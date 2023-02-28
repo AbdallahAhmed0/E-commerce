@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  APPURL:''
+  APPURL:'http://138.197.181.26:8085'
 };
 
 /*
