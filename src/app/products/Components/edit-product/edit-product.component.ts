@@ -83,6 +83,7 @@ this.editFields =this.convertArrToObj(this.editProduct.value.fields);
 this.product=this.editProduct.value;
 this.product.fields=this.editFields;
 
+console.log(this.product)
 console.log(this.product);
 const observer={
 next: (product:any) => {

@@ -10,11 +10,17 @@ import { DialogeComponent } from '../../../material/dialoge/dialoge.component';
 })
 export class ProductItemComponent implements OnInit {
   @Input() prd!: any;
+  stars = [1, 2, 3, 4, 5];
+  product = { rating: 4 };
 
   constructor(private productService:ProductService,
               private dialog: MatDialog) { }
 
   ngOnInit(): void {
+
+  }
+  rateProduct(rating: number) {
+    this.product.rating = rating;
   }
   deleteProduct(code:string){
     const dialogRef = this.dialog.open(DialogeComponent, {

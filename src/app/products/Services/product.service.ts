@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../../environments/environment';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { product } from '../Model/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,6 @@ import { product } from '../Model/product';
 export class ProductService {
 
   httpOption:any;
-  private _snackBar: any;
 
 
 
@@ -36,7 +36,8 @@ export class ProductService {
     }
   }
 
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient:HttpClient,
+              private _snackBar: MatSnackBar) {
 
 
     this.httpOption = {
@@ -92,6 +93,7 @@ export class ProductService {
         catchError(this.handleError)
       )
       .subscribe(data =>{
+        this.openSnackBar('Deleted');
 
       });
     }
