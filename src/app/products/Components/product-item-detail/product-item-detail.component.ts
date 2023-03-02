@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductService } from './../../Services/product.service';
 import { product } from './../../Model/product';
-import { DialogeComponent } from '../../../material/dialoge/dialoge.component';
+import { DialogeComponent } from '../../../Shared/dialoge/dialoge.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
 
   codeProduct!:string;
   subscripRoute!:Subscription;
-  product!:product;
+  product!:any;
   constructor(private activateRoute: ActivatedRoute,
               private router:Router,
               private productService:ProductService,

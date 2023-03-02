@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogeComponent } from '../../../material/dialoge/dialoge.component';
+import { DialogeComponent } from '../../../Shared/dialoge/dialoge.component';
 
 @Component({
   selector: 'app-product-item',

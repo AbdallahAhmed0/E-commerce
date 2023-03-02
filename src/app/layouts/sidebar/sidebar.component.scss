@@ -1,8 +1,7 @@
 @import "../../../assets/sass/lbd/variables";
 
 mat-sidenav {
-    width: 250px;
-    border-right: none;
+    width: 290px;
     color:$white-color;
 
     padding: 16px;
@@ -10,8 +9,6 @@ mat-sidenav {
   //  background-image: url('../../../assets/img/sidebar-1.jpg');
     // opacity: 0.9;
     background-color:$red-navbar;
-    background-blend-mode: multiply;
-
 }
 
 .body{
@@ -31,8 +28,6 @@ mat-sidenav-container {
     align-items: center;
     justify-content: flex-start;
     font-size: 1.1rem;
-
-
 
     mat-icon {
 
@@ -55,3 +50,20 @@ mat-divider {
     float:right;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  mat-sidenav {
+    width: 275px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  mat-sidenav {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  mat-sidenav {
+    width: 230px;
+  }
+}

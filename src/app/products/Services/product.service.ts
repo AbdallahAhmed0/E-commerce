@@ -56,6 +56,14 @@ export class ProductService {
         catchError(this.handleError)
       );
   }
+  getproductsByPage(page:number,size:number):Observable<product[]>{
+    return this.httpClient.get<product[]>(`${environment.APPURL}/product/${page}/${size}`)
+    .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
 
   getProductByCode(code:string):Observable<product>{
 
@@ -66,6 +74,7 @@ export class ProductService {
     );
 
   }
+
   addproduct(product:product):Observable<any>{
 
   return this.httpClient.post<any>(`${environment.APPURL}/product`,JSON.stringify(product),this.httpOption)

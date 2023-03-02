@@ -6,7 +6,7 @@ import { AddProductComponent } from './Components/add-product/add-product.compon
 import { EditProductComponent } from './Components/edit-product/edit-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../Shared/material/material.module';
 import { ProductListComponent } from './Components/product-list/product-list.component';
 import { ProductItemComponent } from './Components/product-item/product-item.component';
 import { ProductItemDetailComponent } from './Components/product-item-detail/product-item-detail.component';

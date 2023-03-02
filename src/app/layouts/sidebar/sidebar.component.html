@@ -1,11 +1,11 @@
 <mat-sidenav-container>
 
-    <app-header [sidenav]="sidenav"></app-header>
+    <app-header ></app-header>
 
     <div class="body">
     <router-outlet></router-outlet>
     </div>
-    <mat-sidenav #sidenav="matSidenav" [style.width.px]="!sidenav.close ? 80 : 250"
+    <mat-sidenav #sidenav="matSidenav"
       class="mat-elevation-z8">
 
         <br>
