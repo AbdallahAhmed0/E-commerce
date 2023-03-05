@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../../environments/environment';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { product } from '../Model/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,8 @@ export class ProductService {
     }
   }
 
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient:HttpClient,
+              private _snackBar: MatSnackBar) {
 
 
     this.httpOption = {
@@ -54,6 +56,14 @@ export class ProductService {
         catchError(this.handleError)
       );
   }
+  getproductsByPage(page:number,size:number):Observable<product[]>{
+    return this.httpClient.get<product[]>(`${environment.APPURL}/product/${page}/${size}`)
+    .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
+
 
   getProductByCode(code:string):Observable<product>{
 
@@ -64,6 +74,7 @@ export class ProductService {
     );
 
   }
+
   addproduct(product:product):Observable<any>{
 
   return this.httpClient.post<any>(`${environment.APPURL}/product`,JSON.stringify(product),this.httpOption)
@@ -91,8 +102,14 @@ export class ProductService {
         catchError(this.handleError)
       )
       .subscribe(data =>{
-        
+        this.openSnackBar('Deleted');
+
       });
     }
+    openSnackBar(message: string ) {
+      this._snackBar.open(message+" sucessfully","close" ,{
+        duration:3000 ,
 
+      });
+    }
 }

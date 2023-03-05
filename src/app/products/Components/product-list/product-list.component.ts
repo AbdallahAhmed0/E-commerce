@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { map, Observable } from 'rxjs';
 import { ProductService } from './../../Services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
+
 })
 export class ProductListComponent implements OnInit {
   products!:any[];
-  constructor(private productService:ProductService) {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  // products$: Observable<any[]>;
+  page = 0;
+  size = 10;
+  length = 0;
+
+  constructor(private productService:ProductService    ) {
 
   }
 
@@ -16,16 +27,21 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllproducts().subscribe(prds => {
       this.products=prds;
     })
-    this.products=[{name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"Samsung Galaxy A13 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"mb",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-    {name:"HONOR X7a Smartphone Unlocked, 6.74-Inch 90Hz Fullview Display, Dual SIM, 50MP Quad Camera with 6000 mAh Battery, 4GB+128GB, Android 12",code:"bk",fields:{price:120,img:"../../../../assets/img/angular-red.png",place:'Cairo',pages:125}},
-    {name:"Samsung Galaxy A23 Lte Android Smartphone, 64GB, 4GB RAM, Dual Sim Mobile Phone, Light Blue Uae Version",code:"md",fields:{price:95,img:"../../../../assets/img/angular-red.png",place:'Giza'}},
-]
   }
 
+
+
+  getProducts(): void {
+    this.productService.getproductsByPage(this.page,this.size).subscribe( data =>{
+      this.products=data;
+      this.length=data.length;
+
+    })
+  }
+
+  onPageChange(event: PageEvent): void {
+    this.page = event.pageIndex;
+    this.size = event.pageSize;
+    this.getProducts();
+  }
 }

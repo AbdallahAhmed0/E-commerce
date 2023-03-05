@@ -1,20 +1,32 @@
 
 <mat-card class="card" >
 
-  <img mat-card-l-image src="../../../../assets/img/angular-red.png" [routerLink]="['/product/',prd.code]">
+  <img  [src]="prd?.fields.image" alt="Product_image" [routerLink]="['/product/',prd.code]"
+  onerror="this.onerror = null;this.src='../../../../assets/img/full-screen-image-3.jpg'">
 
-  <p><a [routerLink]="['/product/',prd.code]">{{prd.name}}</a></p>
+  <div class="content">
 
-  <mat-card-actions>
-    <a [routerLink]="['/product/',prd.code]">See more</a>
+      <p class="name" [routerLink]="['/product/',prd.code]">{{prd.name}}</p>
+      <span class="type" *ngIf="prd?.fields.type">{{prd?.fields.type}}</span>
+      <span class="type" *ngIf="!prd?.fields.type">others</span>
 
-    <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
-      <mat-icon class="edit-icon">edit</mat-icon>
-  </a>
-  <a class="delete" title="Delete" (click)="deleteProduct(prd.code)">
-    <mat-icon class="delete-icon">delete</mat-icon>
-</a>
+        <div class="rating">
+          <mat-icon class="star" *ngFor="let star of stars" (click)="rateProduct(star)">
+            {{ star <= product.rating ? 'star' : 'star_border' }}
+          </mat-icon>
 
-
-  </mat-card-actions>
+      </div>
+      <div>
+        <span class="price" *ngIf="prd?.fields.price">{{prd?.fields.price |currency}}</span>
+        <span class="cart"><mat-icon>shopping_cart</mat-icon></span>
+      </div>
+      <mat-card-actions  align="end">
+          <a class="edit" title="Edit" [routerLink]="['/product/edit/',prd.code]">
+            <mat-icon class="edit-icon">edit</mat-icon>
+          </a>
+          <a class="delete" title="Delete" (click)="deleteProduct(prd.code)">
+            <mat-icon class="delete-icon">delete</mat-icon>
+          </a>
+    </mat-card-actions>
+  </div>
 </mat-card>

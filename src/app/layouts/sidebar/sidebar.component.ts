@@ -1,5 +1,4 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import {  ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -9,33 +8,15 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class SidebarComponent implements OnInit {
 
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav
+
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
 nameProject!:string;
-  constructor(private observer:BreakpointObserver,
-              private cd:ChangeDetectorRef){
-
+  constructor(){
   }
   ngOnInit(): void {
     this.nameProject='K-M-A';
   }
-
-  ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-      if (res.matches) {
-        this.sidenav.mode='over';
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = 'side';
-        this.sidenav.open();
-      }
-    });
-    this.cd.detectChanges();
-
-  }
-
-
 
 }
 

@@ -1,27 +1,5 @@
 @import "../../../assets/sass/lbd/variables";
 
-mat-sidenav {
-    width: 250px;
-    border-right: none;
-    color:$white-color;
-
-    padding: 16px;
-    text-align: center;
-  //  background-image: url('../../../assets/img/sidebar-1.jpg');
-    // opacity: 0.9;
-    background-color:$red-navbar;
-    background-blend-mode: multiply;
-
-
-}
-
-
-mat-sidenav-container {
-    height: 100%;
-    background:#efefef;
-}
-
-
 
 .menu-button {
     width: 100%;
@@ -29,8 +7,6 @@ mat-sidenav-container {
     align-items: center;
     justify-content: flex-start;
     font-size: 1.1rem;
-
-
 
     mat-icon {
 

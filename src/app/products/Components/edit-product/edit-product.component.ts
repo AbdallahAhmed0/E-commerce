@@ -11,7 +11,7 @@ import { ProductService } from '../../Services/product.service';
   styleUrls: ['./edit-product.component.scss']
 })
 export class EditProductComponent implements OnInit,OnDestroy {
-  
+
   product!:product;
   getProduct!:product;
   editFields!:object;
@@ -39,8 +39,9 @@ ngOnInit(): void {
       // get product by method service getProductByCode
         this.productService.getProductByCode(this.codeProduct).subscribe(prd =>{
         this.getProduct=prd;
-    
-      // get default Fields to show to admin  
+
+
+      // get default Fields to show to admin
         this.defaultFeilds = Object.entries(this.getProduct.fields);
 
             this.editProduct = this.fb.group({
@@ -83,11 +84,12 @@ this.editFields =this.convertArrToObj(this.editProduct.value.fields);
 this.product=this.editProduct.value;
 this.product.fields=this.editFields;
 
+console.log(this.product)
 console.log(this.product);
 const observer={
 next: (product:any) => {
 this.router.navigateByUrl('/product');
-// this.ProductService.openSnackBar('Added');
+this.productService.openSnackBar('Updated');
 },
 error: (err:Error)=>{
 this.consoleError = err.message

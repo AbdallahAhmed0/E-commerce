@@ -1,4 +1,13 @@
 <button mat-button class="btn-add" [routerLink]="['/product/add']" ><mat-icon>add</mat-icon> Add Product</button>
 <div class="product-container">
-  <app-product-item *ngFor="let prd of products" [prd]="prd"></app-product-item>
+  <app-product-item class="item"*ngFor="let prd of products" [prd]="prd"></app-product-item>
+</div>
+<div class="paginator">
+  <!-- <mat-paginator [length]="length"
+                [pageIndex]="page"
+                [ pageSize]="size"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                (page)="onPageChange($event)"
+                aria-label="Select page">
+</mat-paginator> -->
 </div>

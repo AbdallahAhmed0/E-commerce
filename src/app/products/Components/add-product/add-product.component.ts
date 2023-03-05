@@ -72,7 +72,7 @@ export class AddProductComponent implements OnInit,OnDestroy {
     const observer={
       next: (product:any) => {
         this.router.navigateByUrl('/product');
-        // this.ProductService.openSnackBar('Added');
+        this.productService.openSnackBar('Added');
       },
       error: (err:Error)=>{
         this.consoleError = err.message

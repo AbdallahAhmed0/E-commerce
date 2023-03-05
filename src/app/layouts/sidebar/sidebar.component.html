@@ -1,53 +1,44 @@
-<mat-sidenav-container>
 
-    <app-header [sidenav]="sidenav"></app-header>
-
-    <router-outlet></router-outlet>
-
-    <mat-sidenav #sidenav="matSidenav" [style.width.px]="!sidenav.close ? 80 : 250"
-      class="mat-elevation-z8">
-
-        <br>
-        <h2 *ngIf="sidenav.close">{{nameProject}}</h2>
+        <h2>{{nameProject}}</h2>
 
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button">
             <mat-icon>person</mat-icon>
-            <span *ngIf="sidenav.close">Profile</span>
+            <span>Profile</span>
         </button>
 
         <button mat-button class="menu-button">
             <mat-icon>dashboard</mat-icon>
-            <span *ngIf="sidenav.close">Dashboard</span>
+            <span>Dashboard</span>
         </button>
 
 
       <button mat-button class="menu-button" >
         <mat-icon>event_note</mat-icon>
-        <span *ngIf="sidenav.close">Services</span>
+        <span >Services</span>
     </button>
 
     <button mat-button class="menu-button" [routerLink]="['/product']">
       <mat-icon>poll</mat-icon>
-      <span *ngIf="sidenav.close">Products</span>
+      <span >Products</span>
   </button>
 
       <button mat-button class="menu-button" >
         <mat-icon>equalizer</mat-icon>
-        <span *ngIf="sidenav.close">Analytics</span>
+        <span >Analytics</span>
     </button>
 
 
         <button mat-button class="menu-button" >
             <mat-icon>assessment</mat-icon>
-            <span *ngIf="sidenav.close">Roles</span>
+            <span >Roles</span>
         </button>
 
 
             <button mat-button class="menu-button">
                 <mat-icon>https</mat-icon>
-                <span *ngIf="sidenav.close">Change Password</span>
+                <span >Change Password</span>
             </button>
 
             <mat-divider></mat-divider>
@@ -55,19 +46,16 @@
 
           <button mat-button class="menu-button">
             <mat-icon>help</mat-icon>
-            <span *ngIf="sidenav.close">Help</span>
+            <span >Help</span>
         </button>
 
 
           <button mat-button class="menu-button">
                 <mat-icon>notifications</mat-icon>
-                <span *ngIf="sidenav.close">Notifications</span>
+                <span >Notifications</span>
             </button>
 
             <button mat-button class="menu-button">
               <mat-icon>settings</mat-icon>
-              <span *ngIf="sidenav.close">settings</span>
+              <span >settings</span>
           </button>
-
-        </mat-sidenav>
-    </mat-sidenav-container>
