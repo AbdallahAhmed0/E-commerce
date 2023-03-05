@@ -1,22 +1,5 @@
 @import "../../../assets/sass/lbd/variables";
 
-mat-sidenav {
-    width: 290px;
-    color:$white-color;
-
-    padding: 16px;
-    text-align: center;
-  //  background-image: url('../../../assets/img/sidebar-1.jpg');
-    // opacity: 0.9;
-    background-color:$red-navbar;
-}
-
-mat-sidenav-container {
-    height: 100%;
-    background:#efefef;
-}
-
-
 
 .menu-button {
     width: 100%;

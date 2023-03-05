@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { DataSharingService } from '../../Shared/Services/data-sharing.service';
 
 @Component({
@@ -7,14 +8,17 @@ import { DataSharingService } from '../../Shared/Services/data-sharing.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-current!:any;
-constructor( private dataSharingService: DataSharingService) { }
 
-isSidenavOpen = false;
+  constructor( private dataSharingService: DataSharingService) { }
+
 
 ngOnInit(): void {
 
 }
-toggleSidebar() {
-  this.dataSharingService.toggle();
-}}
+@Output() toggleSidebar = new EventEmitter<void>();
+
+  onToggleSidenav() {
+    this.toggleSidebar.emit();
+  }
+
+}

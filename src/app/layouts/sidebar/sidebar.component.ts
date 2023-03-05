@@ -1,5 +1,5 @@
-import {   Component, OnInit} from '@angular/core';
-import { DataSharingService } from '../../Shared/Services/data-sharing.service';
+import {  ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,18 +9,14 @@ import { DataSharingService } from '../../Shared/Services/data-sharing.service';
 export class SidebarComponent implements OnInit {
 
 
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
 nameProject!:string;
-  constructor(private dataSharingService: DataSharingService){
+  constructor(){
   }
-  public isVisible = false;
   ngOnInit(): void {
     this.nameProject='K-M-A';
-    this.dataSharingService.getVisibility().subscribe(isVisible => {
-      this.isVisible = isVisible;
-    });
   }
-
 
 }
 
