@@ -51,14 +51,18 @@ form{
 }
 
 .submit{
-  width: 90px;
-  height: 40px;
+  width: 80px;
+  height: 38px;
   font-size: 18px;
+  font-weight:normal;
   margin-left: 50px;
   margin-bottom: 20px;
+  padding-left: 10px;
   background: rgb(14, 175, 14);
   color: #ffffff;
-
+}
+.submit:hover{
+  background:darken(rgb(14, 175, 14), 12%);
 }
 .icon-delete{
   font-size: 32px;
