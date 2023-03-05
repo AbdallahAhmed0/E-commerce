@@ -1,6 +1,5 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import {   Component, OnInit} from '@angular/core';
+import { DataSharingService } from '../../Shared/Services/data-sharing.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,32 +8,18 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class SidebarComponent implements OnInit {
 
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav
+
 
 nameProject!:string;
-  constructor(private observer:BreakpointObserver,
-              private cd:ChangeDetectorRef){
-
+  constructor(private dataSharingService: DataSharingService){
   }
+  public isVisible = false;
   ngOnInit(): void {
     this.nameProject='K-M-A';
-  }
-
-  ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-      if (res.matches) {
-        this.sidenav.mode='over';
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = 'over';
-        this.sidenav.close();
-      }
+    this.dataSharingService.getVisibility().subscribe(isVisible => {
+      this.isVisible = isVisible;
     });
-    this.cd.detectChanges();
-
   }
-
 
 
 }

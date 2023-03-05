@@ -1,12 +1,7 @@
 <mat-sidenav-container>
 
-    <app-header ></app-header>
-
-    <div class="body">
-    <router-outlet></router-outlet>
-    </div>
-    <mat-sidenav #sidenav="matSidenav"
-      class="mat-elevation-z8">
+  <mat-sidenav #sidenav="matSidenav" [ngStyle]="{ 'display': isVisible ? 'block' : 'none' }"
+  class="mat-elevation-z8">
 
         <br>
         <h2 *ngIf="sidenav.close">{{nameProject}}</h2>

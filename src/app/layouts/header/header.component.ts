@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { DataSharingService } from '../../Shared/Services/data-sharing.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +7,14 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+current!:any;
+constructor( private dataSharingService: DataSharingService) { }
 
-  constructor() { }
-
-@Input()sidenav!:MatSidenav;
+isSidenavOpen = false;
 
 ngOnInit(): void {
-  
-  }
 
 }
+toggleSidebar() {
+  this.dataSharingService.toggle();
+}}
