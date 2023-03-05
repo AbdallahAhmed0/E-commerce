@@ -40,6 +40,7 @@ ngOnInit(): void {
         this.productService.getProductByCode(this.codeProduct).subscribe(prd =>{
         this.getProduct=prd;
 
+
       // get default Fields to show to admin
         this.defaultFeilds = Object.entries(this.getProduct.fields);
 
