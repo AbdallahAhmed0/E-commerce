@@ -1,7 +1,6 @@
 @import '../../../../assets/sass/lbd/variables';
 .contianer{
-  margin: 0px 50px;
-  padding: 80px;
+
 
   p{
       font-size: 27px;
@@ -61,11 +60,12 @@ form{
   color: #ffffff;
 
 }
-.btn-delete{
-  background: #f20202;
-    color: #fff;
-    border-radius: 8px;
-    text-align: center;
+.icon-delete{
+  font-size: 32px;
+  color: #777766;
+  cursor: pointer;
+  height: 36px;
+  width: 35px;
 }
 .btn-add
 {
@@ -73,7 +73,7 @@ form{
   font-size: 17px;
   margin-top: 40px;
 }
-.btn-delete:hover
+.icon-delete:hover
 {
-  background: darken( #f20202, 10%);
+  color: darken( #777777, 15%);
 }

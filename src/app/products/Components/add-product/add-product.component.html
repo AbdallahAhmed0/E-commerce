@@ -38,9 +38,9 @@
         <mat-label>Value</mat-label>
         <input matInput formControlName="value">
       </mat-form-field>
-      <button class="btn-delete" mat-icon-button (click)="deleteField(i)">
-        <mat-icon>delete</mat-icon>
-      </button>
+      <a  title="delete" (click)="deleteField(i)">
+        <mat-icon class="icon-delete">delete</mat-icon>
+      </a>
     </div>
   </div>
 </div>

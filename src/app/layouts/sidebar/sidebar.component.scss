@@ -29,20 +29,3 @@ mat-divider {
     float:right;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  mat-sidenav {
-    width: 275px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  mat-sidenav {
-    width: 250px;
-  }
-}
-
-@media only screen and (max-width: 479px) {
-  mat-sidenav {
-    width: 230px;
-  }
-}
