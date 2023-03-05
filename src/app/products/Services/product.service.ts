@@ -57,6 +57,7 @@ export class ProductService {
       );
   }
   getproductsByPage(page:number,size:number):Observable<product[]>{
+
     return this.httpClient.get<product[]>(`${environment.APPURL}/product/${page}/${size}`)
     .pipe(
         retry(2),

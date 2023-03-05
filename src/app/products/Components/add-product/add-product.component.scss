@@ -64,6 +64,10 @@ form{
 .submit:hover{
   background:darken(rgb(14, 175, 14), 12%);
 }
+.submit:disabled{
+  background:#FFF
+}
+
 .icon-delete{
   font-size: 32px;
   color: #777766;
