@@ -1,14 +1,19 @@
+@import "../../../assets/sass/lbd/variables";
+
 mat-toolbar {
     background: #ffffff;
     color: black;
     height: 70px;
     border-bottom: 2px solid #d7d3d3;
 }
-
+.menu{
+  // color:$red-navbar;
+}
 .right{
 width: 100%;
 display: flex;
 justify-content: right;
+margin-right: 50px;
 }
 span{
     font-size: 16px;
@@ -22,3 +27,38 @@ span{
 mat-icon{
     color: rgb(124, 122, 122);
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  background: #dfdfdf;
+  border-radius: 50px;
+  margin-right: 50px;
+  input{
+    border: none;
+    background: #dfdfdf;
+    border-radius: 8px;
+    width: 80%;
+  }
+}
+
+
+.btn-profile{
+  mat-icon{
+    margin-right: 18px;
+    font-size: 37px;
+    text-align: center;
+    color: #bababa;
+  }
+}
+.cart{
+  margin-right: 15px;
+    font-size: 45px;
+    text-align: center;
+    color: #bababa;
+  }
+  mat-menu{
+    margin-top: 30px;
+  }
