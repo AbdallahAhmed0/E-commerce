@@ -14,7 +14,7 @@
 }
 
 mat-card-header{
-  background: $red-navbar;
+  background:darken($red-navbar, 9%) ;
   font-size: 23px;
   color: #ffffff;
   padding-top: 15px;
@@ -36,7 +36,7 @@ mat-card-content{
 font-size: 18px;
 margin: 23px;
 margin-left: 11%;
-color: $red-navbar;
+color:darken($red-navbar, 9%) ;
 }
 
 form{
@@ -75,11 +75,11 @@ form{
 }
 .btn-add
 {
-  color:$red-navbar;
+  color:darken($red-navbar, 9%) ;
   font-size: 17px;
   margin-top: 40px;
 }
 .icon-delete:hover
 {
-  color: darken( $red-navbar, 4%);
+  color:darken($red-navbar, 9%) ;
 }

@@ -12,7 +12,7 @@
 width: 24%;
 }
 .btn-add{
-  background:$red-navbar;
+background:darken($red-navbar, 9%) ;
   color: white;
   border-radius: 8px;
   font-size: 17px;
@@ -20,7 +20,7 @@ width: 24%;
 
 }
 .btn-add:hover{
-  background: darken($red-navbar,10%);
+  background: darken($red-navbar,15%);
 }
 // @media screen  {
 // .btn-add{

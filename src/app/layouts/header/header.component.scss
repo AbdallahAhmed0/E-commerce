@@ -7,7 +7,7 @@ mat-toolbar {
     border-bottom: 2px solid #d7d3d3;
 }
 .menu{
-  color:$red-navbar;
+  color:darken($red-navbar, 9%) ;
 }
 .right{
 width: 100%;
