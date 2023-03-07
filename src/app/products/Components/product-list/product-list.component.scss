@@ -12,7 +12,7 @@
 width: 24%;
 }
 .btn-add{
-background:darken($red-navbar, 9%) ;
+  background:darken($red-navbar, 9%) ;
   color: white;
   border-radius: 8px;
   font-size: 17px;
@@ -22,15 +22,7 @@ background:darken($red-navbar, 9%) ;
 .btn-add:hover{
   background: darken($red-navbar,15%);
 }
-// @media screen  {
-// .btn-add{
-//   background:#007bff;
-//   color: white;
-//   border-radius: 4px;
-//   font-size: 14px;
-//   margin: 2%;
-// }
-// }
+
 
 .mat-paginator {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -44,7 +36,17 @@ background:darken($red-navbar, 9%) ;
   font-weight: 400;
   float: left;
 }
+@media only screen and (max-width: 1420px) {
+  .item{
+    width: 31%;
+    }
+}
 
+@media only screen and (max-width: 1000px) {
+  .item{
+    width: 47%;
+    }
+}
 
 
 
