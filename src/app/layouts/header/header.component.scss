@@ -33,12 +33,12 @@ mat-icon{
   align-items: center;
   justify-content: center;
   width: 20%;
-  background: #dfdfdf;
+  background: #eeeded;
   border-radius: 50px;
-  margin-right: 50px;
+  margin-right: 80px;
   input{
     border: none;
-    background: #dfdfdf;
+    background: #eeeded;
     border-radius: 8px;
     width: 80%;
   }
@@ -54,11 +54,25 @@ mat-icon{
   }
 }
 .cart{
-  margin-right: 15px;
-    font-size: 45px;
-    text-align: center;
-    color: #bababa;
-  }
+  color: #6e6d6d;
+  float: right;
+  background: #e7e7e7;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  margin-right: 30px;
+  padding: 7px;
+  border-radius: 50%;
+}
+.cart:hover{
+  background: $red-navbar;
+  color: #fff;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
   mat-menu{
     margin-top: 30px;
   }
