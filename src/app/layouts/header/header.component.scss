@@ -93,3 +93,18 @@ input:focus {
       }
     }
   }
+    @media only screen and (min-width: 300px)and (max-width: 590px) {
+      .search-container {
+        width: 50%;
+        margin-right: 23px;
+        input{
+          width: 50%;
+        }
+      }
+      .icon-profile,.cart{
+        margin-right: 5px;
+      }
+      .right{
+        margin-right: 5px;
+      }
+  }
