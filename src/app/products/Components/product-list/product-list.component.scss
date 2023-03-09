@@ -48,5 +48,12 @@ width: 24%;
     }
 }
 
+@media only screen and (min-width: 300px)and (max-width: 700px) {
+  .btn-add{
+    border-radius: 8px;
+    font-size: 13px;
+    margin: 3%;
 
+  }
+}
 
