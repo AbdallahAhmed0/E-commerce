@@ -14,46 +14,35 @@ export class ProductListComponent implements OnInit {
 
   paginationForm!: FormGroup;
   pageSize: number=8;
-  totalProducts!: number;
+  totalElements!: number;
+  pageIndex:number=1;
   products!: any[];
-
   constructor(private productService:ProductService,
               private fb:FormBuilder) {
 
   }
 
   ngOnInit(): void {
-    this.productService.getAllproducts().subscribe(prds => {
-      this.products=prds;
-    })
-    this.paginationForm = this.fb.group({
-      page: ['', Validators.required],
-      size: ['', Validators.required]
-    });
-    // this.getProducts();
+    // this.productService.getAllproducts().subscribe(prds => {
+    //   this.products=prds;
+    // })
+
+    this.getProducts();
   }
 
   getProducts() {
-    const page = this.paginationForm.get('page')?.value;
-    const size = this.paginationForm.get('size')?.value;
 
-    // Make API call with page and size parameters
-      this.productService.getproductsByPage(page,size).subscribe(data =>{
-
-        // Update product list and paginator
-          this.products = data;
-          console.log(this.products)
-          this.totalProducts = data.length;
-          this.pageSize = size;
-          this.paginator.firstPage();
-
-      })
+    this.productService.getproductsByPage(this.pageIndex, this.pageSize).subscribe(data => {
+      this.products = data.content;
+      this.totalElements = data.totalElements;
+      this.pageSize = data.size;
+      this.pageIndex = data.number;
+    });
   }
 
-  onPageChange(event:any) {
-    const page = event.pageIndex;
-    const size = event.pageSize;
-    this.paginationForm.patchValue({ page, size });
+  onPageChange(event: PageEvent) {
+    this.paginationForm.patchValue({ page: event.pageIndex, size: event.pageSize });
     this.getProducts();
   }
+
 }
