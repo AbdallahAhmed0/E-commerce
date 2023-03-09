@@ -45,30 +45,33 @@ mat-icon{
 }
 
 
-.btn-profile{
-  mat-icon{
+  .icon-profile{
     margin-right: 18px;
-    font-size: 37px;
+    font-size: 40px;
     text-align: center;
-    color: #bababa;
+    color: $red-navbar;
   }
-}
+
 .cart{
-  color: #6e6d6d;
+  color: #ffffff;
   float: right;
-  background: #e7e7e7;
-  width: 37px;
-  height: 37px;
+  background: $red-navbar;
+  width: 35px;
+  height: 35px;
   text-align: center;
   margin-right: 30px;
-  padding: 7px;
+  text-align: center;
+  padding-top: 7px;
   border-radius: 50%;
 }
 .cart:hover{
-  background: $red-navbar;
-  color: #fff;
+  background:darken( $red-navbar, 10%);
   cursor: pointer;
 }
+.icon-profile:hover{
+  color:darken( $red-navbar, 10%);
+}
+
 input:focus {
   outline: none;
   border: none;
