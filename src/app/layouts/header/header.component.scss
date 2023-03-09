@@ -36,6 +36,7 @@ mat-icon{
   background: #eeeded;
   border-radius: 50px;
   margin-right: 80px;
+  font-size: 19px;
   input{
     border: none;
     background: #eeeded;
@@ -88,6 +89,7 @@ input:focus {
   @media only screen and (max-width: 1000px) {
     .search-container {
       width: 30%;
+      font-size: 18px;
       input{
         width: 60%;
       }
@@ -97,12 +99,21 @@ input:focus {
       .search-container {
         width: 50%;
         margin-right: 23px;
+        font-size: 17px;
         input{
           width: 50%;
         }
       }
       .icon-profile,.cart{
         margin-right: 5px;
+      }
+      .icon-profile{
+        font-size: 36px;
+      }
+      .cart{
+        width: 30px;
+        height: 30px;
+        padding-top: 5px;
       }
       .right{
         margin-right: 5px;
