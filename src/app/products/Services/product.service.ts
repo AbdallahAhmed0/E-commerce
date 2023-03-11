@@ -56,8 +56,9 @@ export class ProductService {
         catchError(this.handleError)
       );
   }
-  getproductsByPage(page:number,size:number):Observable<product[]>{
-    return this.httpClient.get<product[]>(`${environment.APPURL}/product/${page}/${size}`)
+  getproductsByPage(page:number,size:number):Observable<any>{
+
+    return this.httpClient.get<any>(`${environment.APPURL}/product/${page}/${size}`)
     .pipe(
         retry(2),
         catchError(this.handleError)

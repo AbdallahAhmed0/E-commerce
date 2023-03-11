@@ -1,72 +1,89 @@
+@import "../../../../assets/sass/lbd/variables";
 
 .product-container{
 
-  background: #FFF;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 6%;
+  overflow: auto;
 }
 .item{
 width: 24%;
 }
-.btn-add{
-  background:#007bff;
+.btn-Add{
+  background:darken($red-navbar, 9%) ;
   color: white;
   border-radius: 8px;
   font-size: 17px;
   margin: 2%;
 
 }
-.btn-add:hover{
-  background: darken(#007bff,10%);
+.btn-Add:hover{
+  background: darken($red-navbar,15%);
 }
-// @media screen  {
-// .btn-add{
-//   background:#007bff;
-//   color: white;
-//   border-radius: 4px;
-//   font-size: 14px;
-//   margin: 2%;
-// }
-// }
 
-.paginator-label {
+
+.mat-paginator {
+  border: 1px solid #ccc;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.mat-paginator-page-size-label {
+  font-size: 15px;
+  font-weight: 400;
+  float: left;
+}
+
+
+.mat-paginator-container {
   display: flex;
-  align-items: center;
-  margin-right: 24px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.paginator-page-size {
-  font-size: 14px;
-  margin-right: 8px;
+.mat-paginator-container > * {
+  margin: auto;
 }
 
-.mat-select {
-  font-size: 14px;
+@media only screen and (max-width: 1420px) {
+  .item{
+    width: 31%;
+    }
+    .mat-paginator {
+      width: 50%;
+    }
 }
 
-.mat-paginator-page-size {
-  font-size: 14px;
-  color: #333;
+@media only screen and (max-width: 1000px) {
+  .item{
+    width: 47%;
+    }
+    .mat-paginator {
+      width: 70%;
+    }
 }
 
-.mat-paginator-range-label {
-  font-size: 14px;
-  color: #333;
+@media only screen and (min-width: 300px)and (max-width: 700px) {
+  .btn-add{
+    border-radius: 8px;
+    font-size: 13px;
+    margin: 3%;
+    padding-left: 2px;
+  }
+  .mat-paginator {
+    width: 90%;
+  }
+
+  .mat-paginator-container {
+    display: flex;
+    height: 30px;
+  }
+
+  .mat-paginator-container > * {
+  margin: 0px;
+  }
 }
 
-.mat-paginator-navigation .mat-icon {
-  font-size: 20px;
-  color: #333;
-}
-
-.mat-paginator-navigation .mat-icon:hover {
-  color: #007bff;
-}
-
-.mat-paginator-page-info {
-  font-size: 14px;
-  color: #333;
-  margin: 0 16px;
-}

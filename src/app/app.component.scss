@@ -12,7 +12,10 @@ mat-sidenav {
 
 mat-sidenav-container {
     height: 100%;
+    background: #FFFFFF;
+
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   mat-sidenav {
     width: 275px;

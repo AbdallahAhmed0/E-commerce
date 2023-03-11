@@ -11,8 +11,8 @@
       <span class="type" *ngIf="!prd?.fields.type">others</span>
 
         <div class="rating">
-          <mat-icon class="star" *ngFor="let star of stars" (click)="rateProduct(star)">
-            {{ star <= product.rating ? 'star' : 'star_border' }}
+          <mat-icon class="star" *ngFor="let star of stars">
+            {{ star <= prd.fields.rating ? 'star' : 'star_border' }}
           </mat-icon>
 
       </div>

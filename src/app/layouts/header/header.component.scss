@@ -1,14 +1,19 @@
+@import "../../../assets/sass/lbd/variables";
+
 mat-toolbar {
     background: #ffffff;
     color: black;
     height: 70px;
     border-bottom: 2px solid #d7d3d3;
 }
-
+.menu{
+  color:darken($red-navbar, 9%) ;
+}
 .right{
 width: 100%;
 display: flex;
 justify-content: right;
+margin-right: 30px;
 }
 span{
     font-size: 16px;
@@ -22,3 +27,95 @@ span{
 mat-icon{
     color: rgb(124, 122, 122);
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  background: #eeeded;
+  border-radius: 50px;
+  margin-right: 80px;
+  font-size: 19px;
+  input{
+    border: none;
+    background: #eeeded;
+    border-radius: 8px;
+    width: 80%;
+  }
+}
+
+
+  .icon-profile{
+    margin-right: 18px;
+    font-size: 40px;
+    text-align: center;
+    color: $red-navbar;
+  }
+
+.cart{
+  color: #ffffff;
+  float: right;
+  background: $red-navbar;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  margin-right: 30px;
+  text-align: center;
+  padding-top: 7px;
+  border-radius: 50%;
+}
+.cart:hover{
+  background:darken( $red-navbar, 10%);
+  cursor: pointer;
+}
+.icon-profile:hover{
+  color:darken( $red-navbar, 10%);
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+  mat-menu{
+    margin-top: 30px;
+  }
+  @media only screen and (max-width: 1420px) {
+    .search-container {
+      width: 25%;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .search-container {
+      width: 30%;
+      font-size: 18px;
+      input{
+        width: 60%;
+      }
+    }
+  }
+    @media only screen and (min-width: 300px)and (max-width: 590px) {
+      .search-container {
+        width: 50%;
+        margin-right: 23px;
+        font-size: 17px;
+        input{
+          width: 50%;
+        }
+      }
+      .icon-profile,.cart{
+        margin-right: 5px;
+      }
+      .icon-profile{
+        font-size: 36px;
+      }
+      .cart{
+        width: 30px;
+        height: 30px;
+        padding-top: 5px;
+      }
+      .right{
+        margin-right: 5px;
+      }
+  }

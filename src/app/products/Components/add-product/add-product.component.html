@@ -1,5 +1,5 @@
 <div class="contianer" >
-  <button mat-button class="btn-list" style="color:#007bff;" (click)="goback()"><mat-icon>menu</mat-icon> All Products</button>
+  <button mat-button class="btn-list" (click)="goback()"><mat-icon>menu</mat-icon> All Products</button>
 
     <form #productFrm="ngForm" [formGroup]="newProduct" (ngSubmit)="addProduct()">
       <mat-card class="card">

@@ -68,6 +68,7 @@ img{
     height: 40px;
     text-align: center;
 }
+
 .edit-icon:hover{
   background: darken(#0cd463, 15%);
 }
@@ -95,14 +96,12 @@ mat-card-actions{
 }
 p{
   font-size: 16px;
+  width:80%;
+  overflow: hidden;
   word-wrap: break-word;
-  width:75%;
-
+  text-overflow: ellipsis;
 }
 .star{
 color:rgb(255, 100, 10);
 margin-bottom: 10px;
-}
-@media screen {
-
 }
