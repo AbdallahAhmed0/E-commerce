@@ -1,7 +1,7 @@
 <button mat-button class="btn-add" [routerLink]="['/product/add']" ><mat-icon>add</mat-icon> Add Product</button>
 <div class="paginator">
-  <mat-paginator [length]="totalElements" [pageSize]="pageSize" [pageIndex]="pageIndex"
-  (page)="onPageChange($event)">
+  <mat-paginator [pageSizeOptions]="[8, 16, 32,64,128]" [length]="totalElements" [pageSize]="pageSize" [pageIndex]="pageIndex"
+  (page)="onPageChange($event)" >
 </mat-paginator>
 
 

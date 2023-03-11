@@ -25,26 +25,44 @@ width: 24%;
 
 
 .mat-paginator {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
-
 }
-::ng-deep .mat-paginator-page-size-label {
+
+.mat-paginator-page-size-label {
   font-size: 15px;
   font-weight: 400;
   float: left;
 }
+
+
+.mat-paginator-container {
+  display: flex;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mat-paginator-container > * {
+  margin: auto;
+}
+
 @media only screen and (max-width: 1420px) {
   .item{
     width: 31%;
+    }
+    .mat-paginator {
+      width: 50%;
     }
 }
 
 @media only screen and (max-width: 1000px) {
   .item{
     width: 47%;
+    }
+    .mat-paginator {
+      width: 70%;
     }
 }
 
@@ -54,6 +72,18 @@ width: 24%;
     font-size: 13px;
     margin: 3%;
     padding-left: 2px;
+  }
+  .mat-paginator {
+    width: 90%;
+  }
+
+  .mat-paginator-container {
+    display: flex;
+    height: 30px;
+  }
+
+  .mat-paginator-container > * {
+  margin: 0px;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { ProductService } from './../../Services/product.service';
@@ -7,15 +7,15 @@ import { ProductService } from './../../Services/product.service';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
+  encapsulation: ViewEncapsulation.None
 
 })
 export class ProductListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  paginationForm!: FormGroup;
   pageSize: number=8;
   totalElements!: number;
-  pageIndex:number=1;
+  pageIndex:number=0;
   products!: any[];
   constructor(private productService:ProductService,
               private fb:FormBuilder) {
@@ -41,7 +41,8 @@ export class ProductListComponent implements OnInit {
   }
 
   onPageChange(event: PageEvent) {
-    this.paginationForm.patchValue({ page: event.pageIndex, size: event.pageSize });
+    this.pageIndex= event.pageIndex;
+    this.pageSize= event.pageSize
     this.getProducts();
   }
 
