@@ -5,15 +5,18 @@
   width: 80%;
   margin:2% 10%;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
 }
+
   img {
     margin-right: 10%;
     object-fit: cover;
     border-radius: 2px;
     background: rgb(238, 236, 236);
     cursor: pointer;
-    max-height: 350px;
-    width: 50%;
+    max-height: 400px;
+    width: 400px;
 
   }
   .mat-card-image:first-child{
@@ -34,7 +37,7 @@ span{
   font-weight: 500;
 }
 .cart{
-  background: $color-blue;
+  background:darken($red-navbar, 9%) ;
   color: $white-color;
   border-radius: 5px;
   margin: 20px;
@@ -44,7 +47,7 @@ img:hover{
 background: darken(rgb(238, 236, 236), 18%);
 }
 .cart:hover{
-  background: darken($color-blue, 20%);
+  background:darken($red-navbar, 15%) ;
 
 }
 .btn-edit{
@@ -65,3 +68,56 @@ background: darken(rgb(238, 236, 236), 18%);
   margin-left:15px;
 
 }
+
+@media only screen and (max-width: 960px) {
+  .product-card {
+    display: block;
+  }
+  img {
+    margin: 30px 22%;
+    width: 350px;
+    max-height: 470px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 250px)and (max-width: 630px) {
+  .product-card {
+    display: block;
+  }
+  img {
+    margin: 30px 15%;
+    width: 200px;
+    max-height: 300px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-edit{
+    color:$white-color;
+    background:#0cd463;
+    font-size: 13px;
+    margin-top: 25px;
+    border-radius:8px;
+    margin-left:20px;
+
+  }
+  .btn-delete{
+    color:$white-color;
+    background:$danger-states-color;
+    font-size: 13px;
+    margin-top: 25px;
+    border-radius:8px;
+    margin-left:10px;
+
+  }
+
+}
+
+
