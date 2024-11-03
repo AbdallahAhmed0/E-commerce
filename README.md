@@ -1,2 +1,2 @@
-# K-A-M Project
+# E-Commerce
 ## Front-End Angular application.
