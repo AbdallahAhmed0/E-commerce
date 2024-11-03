@@ -50,25 +50,25 @@ export class ProductService {
   }
 
   getAllproducts():Observable<product[]>{
-    return this.httpClient.get<product[]>(`${environment.APPURL}/product`)
+    return this.httpClient.get<product[]>(`${environment.APPURL}/products`)
     .pipe(
         retry(2),
         catchError(this.handleError)
       );
   }
-  getproductsByPage(page:number,size:number):Observable<any>{
+  // getproductsByPage(page:number,size:number):Observable<any>{
 
-    return this.httpClient.get<any>(`${environment.APPURL}/product/${page}/${size}`)
-    .pipe(
-        retry(2),
-        catchError(this.handleError)
-      );
-  }
+  //   return this.httpClient.get<any>(`${environment.APPURL}/products/${page}/${size}`)
+  //   .pipe(
+  //       retry(2),
+  //       catchError(this.handleError)
+  //     );
+  // }
 
 
-  getProductByCode(code:string):Observable<product>{
+  getProductById(id:string):Observable<product>{
 
-    return this.httpClient.get<product>(`${environment.APPURL}/product/${code}`)
+    return this.httpClient.get<product>(`${environment.APPURL}/products/${id}`)
     .pipe(
       retry(2),
       catchError(this.handleError)
@@ -78,7 +78,7 @@ export class ProductService {
 
   addproduct(product:product):Observable<any>{
 
-  return this.httpClient.post<any>(`${environment.APPURL}/product`,JSON.stringify(product),this.httpOption)
+  return this.httpClient.post<any>(`${environment.APPURL}/products`,JSON.stringify(product),this.httpOption)
   .pipe(
     retry(2),
     catchError(this.handleError)
@@ -87,7 +87,7 @@ export class ProductService {
 
   }
   updateProduct(product:product):Observable<any>{
-    return  this.httpClient.put<any>(`${environment.APPURL}/product/${product.code}`,JSON.stringify(product),this.httpOption)
+    return  this.httpClient.put<any>(`${environment.APPURL}/products/${product.id}`,JSON.stringify(product),this.httpOption)
     .pipe(
       retry(2),
       catchError(this.handleError)
@@ -95,9 +95,9 @@ export class ProductService {
 
 
     }
-    deleteProduct(code:string){
+    deleteProduct(id:string){
 
-      this.httpClient.delete(`${environment.APPURL}/product/${code}`)
+      this.httpClient.delete(`${environment.APPURL}/products/${id}`)
       .pipe(
         retry(2),
         catchError(this.handleError)

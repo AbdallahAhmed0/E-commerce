@@ -2,8 +2,15 @@ export interface product
 {
 
   id?:number,
-  name:string,
-  code:string,
-  fields:object
+  title:string,
+  price:number,
+  description:string,
+  category:string,
+  image:string,
+  rating?:rate
 
+}
+export interface rate{
+  rate:number,
+  count:number
 }

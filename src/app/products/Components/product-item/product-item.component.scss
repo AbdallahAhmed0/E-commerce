@@ -50,12 +50,11 @@ img{
   padding: 5px;
   border-radius: 50%;
 }
-.cart:hover{
+.cart:hover {
   background: rgb(255, 100, 10);
   color: #fff;
-  cursor: pointer;
+  transform: rotate(20deg);
 }
-
 .edit-icon{
 
     color: #fff;

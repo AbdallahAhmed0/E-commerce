@@ -25,7 +25,7 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
     this.subscripRoute= this.activateRoute.paramMap.subscribe( paramMap  => {
     this.codeProduct = String(paramMap.get('code'));
   })
-this.productService.getProductByCode(this.codeProduct).subscribe(prd =>{
+this.productService.getProductById(this.codeProduct).subscribe(prd =>{
   this.product=prd;
 })
 

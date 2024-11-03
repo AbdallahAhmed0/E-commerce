@@ -23,27 +23,27 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.productService.getAllproducts().subscribe(prds => {
-    //   this.products=prds;
-    // })
+    this.productService.getAllproducts().subscribe(prds => {
+      this.products=prds;
+    })
 
-    this.getProducts();
+    // this.getProducts();
   }
 
   getProducts() {
 
-    this.productService.getproductsByPage(this.pageIndex, this.pageSize).subscribe(data => {
-      this.products = data.content;
-      this.totalElements = data.totalElements;
-      this.pageSize = data.size;
-      this.pageIndex = data.number;
-    });
+    // this.productService.getproductsByPage(this.pageIndex, this.pageSize).subscribe(data => {
+    //   this.products = data.content;
+    //   this.totalElements = data.totalElements;
+    //   this.pageSize = data.size;
+    //   this.pageIndex = data.number;
+    // });
   }
 
-  onPageChange(event: PageEvent) {
-    this.pageIndex= event.pageIndex;
-    this.pageSize= event.pageSize
-    this.getProducts();
-  }
+  // onPageChange(event: PageEvent) {
+  //   this.pageIndex= event.pageIndex;
+  //   this.pageSize= event.pageSize
+  //   this.getProducts();
+  // }
 
 }
