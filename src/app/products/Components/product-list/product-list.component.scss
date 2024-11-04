@@ -8,6 +8,11 @@
   margin: 6%;
   overflow: auto;
 }
+.mat-dialog-content {
+  max-height: calc(100vh - 64px);  // Account for dialog padding/margin if necessary
+  overflow-y: auto;
+}
+
 .item{
 width: 24%;
 }

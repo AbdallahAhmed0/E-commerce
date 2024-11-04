@@ -19,7 +19,7 @@ export class ProductItemComponent implements OnInit {
 
   }
   
-  deleteProduct(code:string){
+  deleteProduct(id:string){
     const dialogRef = this.dialog.open(DialogeComponent, {
       width: '400px',
       height:'290px'
@@ -28,7 +28,7 @@ export class ProductItemComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result === 'confirm') {
 
-        this.productService.deleteProduct(code);
+        this.productService.deleteProduct(id);
         window.location.reload();
           }
     });
