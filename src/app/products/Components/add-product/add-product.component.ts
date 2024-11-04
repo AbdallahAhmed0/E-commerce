@@ -50,16 +50,22 @@ export class AddProductComponent implements OnInit,OnDestroy {
   }     
 
   onSubmit() {
+    this.product = this.newProduct.value;
+    const observer={
+      next: (product:any) => {
+      this.router.navigateByUrl('/product');
+      this.productService.openSnackBar('added');
+      },
+      error: (err:Error)=>{
+      this.consoleError = err.message
+      }
+    }
     if (this.newProduct.valid) {
-      const newProduct: product = this.newProduct.value;
-      // Handle form submission, e.g., send product data to the backend
-      this.dialogRef.close(newProduct); // Pass the new product back to the parent component
+      this.subscrProduct= this.productService.addproduct(this.product).subscribe(observer);
+      this.dialogRef.close(this.product); // Pass the new product back to the parent component
     }
   }
 
-  addProduct(){
-  // this.subscrProduct= this.productService.addproduct(this.product).subscribe(observer);
-  }
 
 goback(){
   this.router.navigateByUrl('/product');

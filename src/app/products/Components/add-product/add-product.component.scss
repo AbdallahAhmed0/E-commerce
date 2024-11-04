@@ -1,158 +1,70 @@
+// Import necessary variables if you have a defined color palette
 @import '../../../../assets/sass/lbd/variables';
 
-.contianer{
-  margin: 3%;
+.container {
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 
-.card{
-  margin-left: 10%;
-  border: none;
-  border-radius: 10px;
-  width: 70%;
-  padding: 0px;
-  padding-bottom: 30px;
-}
-
-mat-card-header{
-  background:darken($red-navbar, 9%) ;
-  font-size: 23px;
-  color: #ffffff;
-  padding-top: 15px;
-  width: 100%;
-  height: 55px;
-  margin-bottom: 35px;
-  border-radius: 10px 10px 0px 0px;
-
-}
-mat-card-actions{
-  margin-bottom: 30px;
-  padding-left: 20px;
-}
-mat-card-content{
-  margin-left: 22px;
-}
-
-.btn-list{
-font-size: 18px;
-margin: 23px;
-margin-left: 11%;
-color:darken($red-navbar, 9%) ;
-}
-
-form{
-  margin:20px 30px;
-
-  mat-form-field{
-      width: 40%;
-      display: inline-block;
-      margin: 20px 30px ;
-}
-
-}
-
-.submit{
-  width: 80px;
-  height: 38px;
-  font-size: 18px;
-  font-weight:normal;
-  margin-left: 50px;
+h2 {
+  color: darken($red-navbar, 9%);
+  font-weight: 500;
   margin-bottom: 20px;
-  padding-left: 10px;
-  background: rgb(14, 175, 14);
-  color: #ffffff;
-}
-.submit:hover{
-  background:darken(rgb(14, 175, 14), 12%);
-}
-.submit:disabled{
-  background:#eceaea;
+  width: 100%;
+  text-align: center;
 }
 
-.icon-delete{
-  font-size: 32px;
-  color: #777766;
-  cursor: pointer;
-  height: 36px;
-  width: 35px;
-}
-.btn-add
-{
-  color:darken($red-navbar, 9%) ;
-  font-size: 17px;
-  margin-top: 40px;
-}
-.icon-delete:hover
-{
-  color:darken($red-navbar, 9%) ;
-}
-@media only screen and (max-width: 1320px) {
-  .card{
-    margin-left: 7%;
-    width: 80%;
-  }
-  .btn-list{
-    margin-left: 8%;
-}
+h3 {
+  color: $dark-gray;
+  font-weight: 500;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 
-@media only screen and (max-width: 1200px) {
-  .card{
-    margin-left: 2%;
-    width: 95%;
-  }
-  form{
-    margin:20px;
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+.desc{
+  flex: 1 1 70%;
+}
+mat-form-field {
+  flex: 1 1 48%;
+  min-width: 250px;
+  margin: 10px 0;
+}
 
-  mat-form-field{
-    width: 40%;
-    display: inline-block;
-    margin: 10px 20px ;
 
-      }
+@media (max-width: 768px) {
+  mat-form-field {
+    flex: 1 1 100%;
   }
-.btn-list{
-  margin-left: 4%;
-}
-}
-  @media only screen and (max-width: 960px){
-    .contianer{
-      margin: 1%;
-    }
-    .card{
-      width: 100%;
-    }
-    form{
-      margin:20px 5px;
-      margin-right: 30px;
 
-    mat-form-field{
-      width: 40%;
-      display: inline-block;
-  }
-}
-  mat-card-content{
-    margin-left: 5px;
-  }
-  .btn-list{
-    margin-left: 3%;
-  }
-}
-@media only screen and (min-width: 250px)and (max-width: 680px) {
-  .contianer{
-    margin: 1%;
-  }
-  .card{
+  .actions {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    gap: 10px;
   }
-  form{
-    margin:20px 5px;
-    margin-right: 30px;
-
-  mat-form-field{
-    width: 70%;
-    display: inline-block;
-    margin-left: 30px;
-}
 }
 
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: $primary-color !important;
+  color: #fff;
 }
